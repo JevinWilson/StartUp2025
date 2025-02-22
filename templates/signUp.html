@@ -1,0 +1,59 @@
+<!-- signUp.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge - Sign Up</title>
+    <link rel="stylesheet" href="{{ static_url('css/style.css') }}">
+</head>
+<body class="signup-page">
+    <div class="signup-container">
+        <div class="logo">Merge</div>
+        <p class="subtitle">More than networking - Merging futures</p>
+        
+        <button class="linkedin-button" onclick="simulateLinkedInAuth()">
+            <span class="linkedin-icon">in</span>
+            Continue with LinkedIn
+        </button>
+
+        <div class="loading">
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <p class="loading-text">Connecting to LinkedIn...</p>
+        </div>
+    </div>
+
+    <!-- Embedded JavaScript (can be moved to an external file if needed) -->
+    <script>
+        function simulateLinkedInAuth() {
+            // Hide the button
+            document.querySelector('.linkedin-button').style.display = 'none';
+            
+            // Show loading
+            const loading = document.querySelector('.loading');
+            loading.style.display = 'block';
+            
+            // Animate progress bar
+            setTimeout(() => {
+                document.querySelector('.loading-progress').style.width = '100%';
+            }, 100);
+
+            // Update loading text
+            setTimeout(() => {
+                document.querySelector('.loading-text').textContent = 'Verifying credentials...';
+            }, 1000);
+
+            setTimeout(() => {
+                document.querySelector('.loading-text').textContent = 'Creating your profile...';
+            }, 2000);
+
+            // Redirect to main app after "authentication"
+            setTimeout(() => {
+                window.location.href = '/merge';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
