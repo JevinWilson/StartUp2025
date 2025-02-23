@@ -5,35 +5,40 @@ const profiles = [
         name: 'Jevin Wilson',
         title: 'Prompt Engineer/Data Trainer',
         company: 'Data Annotations Tech',
-        description: 'Senior at SSU and 8 months of experience as a Prompt Engineer'
+        description: 'Senior at SSU and 8 months of experience as a Prompt Engineer',
+        linkedin: 'www.linkedin.com/in/jevin-christian-wilson'
     },
     {
         image: 'static/images/SarahJohnson.jpg',
         name: 'Sarah Johnson, MBA',
         title: 'Marketing Director',
         company: 'Google',
-        description: '10+ years of experience in digital marketing and brand strategy. Stanford Graduate.'
+        description: '10+ years of experience in digital marketing and brand strategy. Stanford Graduate.',
+        linkedin: 'www.linkedin.com/in/jevin-christian-wilson'
     },
     {
         image: 'static/images/MichaelChen.jpg',
         name: 'Michael Chen, PhD',
         title: 'Senior Data Scientist',
         company: 'Microsoft',
-        description: 'AI researcher with focus on machine learning. MIT Alumni.'
+        description: 'AI researcher with focus on machine learning. MIT Alumni.',
+        linkedin: 'www.linkedin.com/in/jevin-christian-wilson'
     },
     {
         image: 'static/images/EmilyRodriguez.jpg',
         name: 'Emily Rodriguez',
         title: 'Product Manager',
         company: 'Apple',
-        description: 'Leading product development for iOS applications. Harvard Business School.'
+        description: 'Leading product development for iOS applications. Harvard Business School.',
+        linkedin: 'www.linkedin.com/in/jevin-christian-wilson'
     },
     {
         image: 'static/images/DavidThompson.jpg',
         name: 'David Thompson',
         title: 'Investment Banker',
         company: 'Goldman Sachs',
-        description: 'Specializing in mergers and acquisitions. Wharton Graduate.'
+        description: 'Specializing in mergers and acquisitions. Wharton Graduate.',
+        linkedin: 'www.linkedin.com/in/jevin-christian-wilson'
     }
 ];
 
@@ -110,9 +115,9 @@ window.addEventListener('load', function() {
     function loadNewProfile() {
         currentProfileIndex = (currentProfileIndex + 1) % profiles.length;
         const profile = profiles[currentProfileIndex];
-
+    
         card.innerHTML = `
-            <img src="${profile.image}" class="profile-image" alt="${profile.name}">
+            <img src="/static/images/${profile.image.split('/').pop()}" class="profile-image" alt="${profile.name}">
             <div class="profile-info">
                 <div class="profile-name">${profile.name}</div>
                 <div class="profile-title">${profile.title}</div>
@@ -120,6 +125,10 @@ window.addEventListener('load', function() {
                 <div class="profile-description">
                     <p>${profile.description}</p>
                 </div>
+                <a href="https://${profile.linkedin}" target="_blank" class="card-linkedin-button">
+                    <span class="linkedin-icon">in</span>
+                    View
+                </a>
             </div>
         `;
         

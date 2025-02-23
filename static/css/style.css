@@ -183,3 +183,29 @@
     color: white;
     font-size: 24px;
 }
+
+/* LinkedIn profile button */
+.card-linkedin-button {
+    background-color: var(--linkedin-blue);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.card-linkedin-button:hover {
+    background-color: #005e93;
+}
+
+.card-linkedin-button .linkedin-icon {
+    margin-right: 5px;
+    font-size: 16px;
+}
